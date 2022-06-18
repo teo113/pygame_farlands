@@ -13,12 +13,16 @@ Your character will start in the village of Hearthwood. Here he can meet locals 
 ## concepts
 - open-world free roaming
 - treasure & loot
+- NPCs (villagers, wizards, adventurers, alchemists & more...)
+- enemies (skeletons, spiders, witches, ghosts, bandits & more...)
 - NPC dialogue
 - combat
 - farming
 - day & night cycle
 - weather cycle (clear, rain, storm)
 - AI (NPC & enemy actions/responses)
-- chracter naming
+- character naming
 - save game
 - background music
+- health bar
+- money (gold coins)
