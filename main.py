@@ -1,10 +1,14 @@
 import pygame
+from pygame.locals import *
+from pygame import mixer
 import sys
 
 pygame.init()
 
 display = pygame.display.set_mode((800, 600))
 clock = pygame.time.Clock()
+
+ruins_image = pygame.image.load("assets/ruins.png")
 
 class Player:
     def __init__(self, x, y, width, height):
@@ -29,7 +33,9 @@ while True:
     
     keys = pygame.key.get_pressed()
 
+    # static reference point
     pygame.draw.rect(display, (255,255,255), (100-display_scroll[0], 100-display_scroll[1], 16, 16))
+    #pygame.draw.image()
 
     if keys[pygame.K_a]:
         display_scroll[0] -= 5
