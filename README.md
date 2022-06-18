@@ -2,8 +2,8 @@
 Farlands is an 8x8 style top-down RPG game, written purely in Python.
 
 ## authors
-Theodore Faull
-Robin Morris
+- Theodore Faull
+- Robin Morris
 
 ## game story
 Your character has reached the end of the known world, know as the Farlands, to explore and adventure through the landscape. What is beyond the safety of the village? What is the mysterious source of power in the wastelands? What is threatening the villagers?
