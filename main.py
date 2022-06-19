@@ -11,7 +11,8 @@ clock = pygame.time.Clock()
 
 # player assets
 player_walk_images = [
-    pygame.image.load("assets/player_stand_left_x1.png")
+    pygame.image.load("assets/player_stand_left_x1.png"),
+    pygame.image.load("assets/player_walk_left_x1.png")
     ]
 
 # player class
@@ -55,6 +56,7 @@ while True:
     #pygame.draw.rect(display, (255,255,255), (100-display_scroll[0], 100-display_scroll[1], 16, 16))
     display.blit(pygame.transform.scale(pygame.image.load("assets/tree1_x1.png"),(192, 192)), (100-display_scroll[0], 100-display_scroll[1], 16, 16))
     display.blit(pygame.transform.scale(pygame.image.load("assets/ruins_x1.png"),(192, 192)), (500-display_scroll[0], 350-display_scroll[1], 16, 16))
+    display.blit(pygame.transform.scale(pygame.image.load("assets/bush1_x1.png"),(128, 128)), (425-display_scroll[0], 475-display_scroll[1], 16, 16))
 
     # map movement keys to display movement
     if keys[pygame.K_a]:

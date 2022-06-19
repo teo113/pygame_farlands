@@ -16,6 +16,7 @@ Your character will start in the village of Hearthwood. Here he can meet locals 
 - enemies (skeletons, spiders, witches, ghosts, bandits & more...)
 - NPC dialogue
 - combat
+- object and chracter collisions
 - farming
 - day & night cycle
 - weather cycle (clear, rain, storm)
