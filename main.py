@@ -52,11 +52,19 @@ while True:
     
     keys = pygame.key.get_pressed()
 
-    # static objects
+    # start location objects
     #pygame.draw.rect(display, (255,255,255), (100-display_scroll[0], 100-display_scroll[1], 16, 16))
     display.blit(pygame.transform.scale(pygame.image.load("assets/tree1_x1.png"),(192, 192)), (100-display_scroll[0], 100-display_scroll[1], 16, 16))
     display.blit(pygame.transform.scale(pygame.image.load("assets/ruins_x1.png"),(192, 192)), (500-display_scroll[0], 350-display_scroll[1], 16, 16))
     display.blit(pygame.transform.scale(pygame.image.load("assets/bush1_x1.png"),(128, 128)), (425-display_scroll[0], 475-display_scroll[1], 16, 16))
+    display.blit(pygame.transform.scale(pygame.image.load("assets/horse1_saddled_feeding0_x1.png"),(192, 136)), (650-display_scroll[0], 550-display_scroll[1], 24, 17))
+
+    # initialize font
+    myfont = pygame.font.SysFont("monospace", 10)
+
+    # render text
+    label = myfont.render("You arrive weary after a long journey... Your horse senses danger and refuses to carry on...", 1, (255,255,255))
+    display.blit(label, (10, 550))
 
     # map movement keys to display movement
     if keys[pygame.K_a]:
