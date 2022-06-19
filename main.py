@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
 from pygame import mixer
+import random
 import sys
 
 pygame.init()
@@ -8,17 +9,33 @@ pygame.init()
 display = pygame.display.set_mode((800, 600))
 clock = pygame.time.Clock()
 
-ruins_image = pygame.image.load("assets/ruins.png")
+# player assets
+player_walk_images = [
+    pygame.image.load("assets/player_stand_left_x1.png")
+    ]
 
+# player class
 class Player:
     def __init__(self, x, y, width, height):
         self.x = x
         self.y = y
         self.width = width
         self.height = height
+        self.moving_left = False
+        self.moving_right = False
     def main(self, display):
-        pygame.draw.rect(display, (255, 0, 0), (self.x, self.y, self.width, self.height))
+        #pygame.draw.rect(display, (255, 0, 0), (self.x, self.y, self.width, self.height))
+        if self.moving_left:
+            display.blit(pygame.transform.scale(player_walk_images[0],(64, 64)), (self.x, self.y))
+        elif self.moving_right:
+            display.blit(pygame.transform.scale(pygame.transform.flip(player_walk_images[0], True, False), (64, 64)), (self.x, self.y))
+        else:
+            display.blit(pygame.transform.scale(player_walk_images[0],(64, 64)), (self.x, self.y))
 
+        self.moving_left = False
+        self.moving_right = False
+
+# player position
 player = Player(400, 300, 32, 32)
 
 display_scroll = [0,0]
@@ -35,12 +52,15 @@ while True:
 
     # static reference point
     pygame.draw.rect(display, (255,255,255), (100-display_scroll[0], 100-display_scroll[1], 16, 16))
-    #pygame.draw.image()
+    #display.blit(pygame.image.load("assets/tree1.png"), (100-display_scroll[0], 100-display_scroll[1], 16, 16))
 
+    # map movement keys to display movement
     if keys[pygame.K_a]:
         display_scroll[0] -= 5
+        player.moving_left = True
     if keys[pygame.K_d]:
         display_scroll[0] += 5
+        player.moving_right = True
     if keys[pygame.K_w]:
         display_scroll[1] -= 5
     if keys[pygame.K_s]:
