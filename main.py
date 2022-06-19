@@ -41,7 +41,8 @@ player = Player(400, 300, 32, 32)
 display_scroll = [0,0]
 
 while True:
-    display.fill((77, 128, 77))
+    #display.fill((77, 128, 77))
+    display.fill((115, 154, 119))
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -50,9 +51,10 @@ while True:
     
     keys = pygame.key.get_pressed()
 
-    # static reference point
-    pygame.draw.rect(display, (255,255,255), (100-display_scroll[0], 100-display_scroll[1], 16, 16))
-    #display.blit(pygame.image.load("assets/tree1.png"), (100-display_scroll[0], 100-display_scroll[1], 16, 16))
+    # static objects
+    #pygame.draw.rect(display, (255,255,255), (100-display_scroll[0], 100-display_scroll[1], 16, 16))
+    display.blit(pygame.transform.scale(pygame.image.load("assets/tree1_x1.png"),(192, 192)), (100-display_scroll[0], 100-display_scroll[1], 16, 16))
+    display.blit(pygame.transform.scale(pygame.image.load("assets/ruins_x1.png"),(192, 192)), (500-display_scroll[0], 350-display_scroll[1], 16, 16))
 
     # map movement keys to display movement
     if keys[pygame.K_a]:
