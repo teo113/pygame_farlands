@@ -15,6 +15,13 @@ player_walk_images = [
     pygame.image.load("assets/player_walk_left_x1.png")
     ]
 
+# horse (saddled) assets
+horse_feeding_images = [
+    pygame.image.load("assets/horse1_saddled_feeding0_x1.png"),
+    pygame.image.load("assets/horse1_saddled_feeding1_x1.png"),
+    pygame.image.load("assets/horse1_saddled_feeding2_x1.png")
+]
+
 # player class
 class Player:
     def __init__(self, x, y, width, height):
@@ -24,12 +31,18 @@ class Player:
         self.height = height
         self.moving_left = False
         self.moving_right = False
+        self.animation_count = 0
     def main(self, display):
+        if self.animation_count + 1 >= 8:
+            self.animation_count = 0
+        
+        self.animation_count += 1
+
         #pygame.draw.rect(display, (255, 0, 0), (self.x, self.y, self.width, self.height))
         if self.moving_left:
-            display.blit(pygame.transform.scale(player_walk_images[0],(64, 64)), (self.x, self.y))
+            display.blit(pygame.transform.scale(player_walk_images[self.animation_count//4],(64, 64)), (self.x, self.y))
         elif self.moving_right:
-            display.blit(pygame.transform.scale(pygame.transform.flip(player_walk_images[0], True, False), (64, 64)), (self.x, self.y))
+            display.blit(pygame.transform.scale(pygame.transform.flip(player_walk_images[self.animation_count//4], True, False), (64, 64)), (self.x, self.y))
         else:
             display.blit(pygame.transform.scale(player_walk_images[0],(64, 64)), (self.x, self.y))
 
@@ -60,7 +73,7 @@ while True:
     display.blit(pygame.transform.scale(pygame.image.load("assets/horse1_saddled_feeding0_x1.png"),(192, 136)), (650-display_scroll[0], 550-display_scroll[1], 24, 17))
 
     # initialize font
-    myfont = pygame.font.SysFont("monospace", 10)
+    myfont = pygame.font.SysFont("monospace", 12)
 
     # render text
     label = myfont.render("You arrive weary after a long journey... Your horse senses danger and refuses to carry on...", 1, (255,255,255))
