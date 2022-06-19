@@ -43,7 +43,7 @@ display_scroll = [0,0]
 
 while True:
     #display.fill((77, 128, 77))
-    display.fill((115, 154, 119))
+    display.fill((115, 154, 119))  # grass coloured background
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
