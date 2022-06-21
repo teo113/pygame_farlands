@@ -52,6 +52,50 @@ class Player:
 # player position
 player = Player(400, 300, 32, 32)
 
+# enemy skeleton
+class EnemySkeleton:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.animation_images = [
+            pygame.image.load("assets/skeleton_stand_left_x1.png"),
+            pygame.image.load("assets/skeleton_walk1_x1.png"),
+            pygame.image.load("assets/skeleton_walk1_x1.png"),
+            pygame.image.load("assets/skeleton_stand_left_x1.png")
+            ]
+        self.animation_count = 0
+        self.reset_offset = 0
+        self.offset_x = random.randrange(-150, 150)
+        self.offset_y = random.randrange(-150, 150)
+    def main(self, display):
+        if self.animation_count + 1 == 16:
+            self.animation_count = 0
+        
+        self.animation_count += 1
+
+        if self.reset_offset  == 0:
+            self.offset_x = random.randrange(-150, 150)
+            self.offset_y = random.randrange(-150, 150)
+            self.reset_offset = random.randrange(120, 150)
+        else:
+            self.reset_offset -= 1
+        
+        if player.x + self.offset_x > self.x-display_scroll[0]:
+            self.x += 1
+        elif player.x + self.offset_x < self.x-display_scroll[0]:
+            self.x -= 1
+        
+        if player.y + self.offset_y > self.y-display_scroll[1]:
+            self.y += 1
+        elif player.y + self.offset_y < self.y-display_scroll[1]:
+            self.y -= 1
+        
+        display.blit(pygame.transform.scale(
+            self.animation_images[self.animation_count//2], (64, 64)), (self.x-display_scroll[0], self.y-display_scroll[1]))
+
+# enemy skeleton position
+enemies = [EnemySkeleton(-100, -100)]
+
 display_scroll = [0,0]
 
 while True:
@@ -61,7 +105,7 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
-            pygame.QUIT
+            pygame.quit()
     
     keys = pygame.key.get_pressed()
 
@@ -92,6 +136,9 @@ while True:
         display_scroll[1] += 5
 
     player.main(display)
+
+    for enemy in enemies:
+        enemy.main(display)
 
     clock.tick(60)
     pygame.display.update()
