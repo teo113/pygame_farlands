@@ -91,10 +91,10 @@ class EnemySkeleton:
             self.y -= 1
         
         display.blit(pygame.transform.scale(
-            self.animation_images[self.animation_count//2], (64, 64)), (self.x-display_scroll[0], self.y-display_scroll[1]))
+            self.animation_images[self.animation_count//4], (64, 64)), (self.x-display_scroll[0], self.y-display_scroll[1]))
 
 # enemy skeleton position
-enemies = [EnemySkeleton(-100, -100)]
+enemies = [EnemySkeleton(10, 10)]
 
 display_scroll = [0,0]
 
