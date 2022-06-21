@@ -35,7 +35,7 @@ class Player:
     def main(self, display):
         if self.animation_count + 1 >= 8:
             self.animation_count = 0
-        
+
         self.animation_count += 1
 
         #pygame.draw.rect(display, (255, 0, 0), (self.x, self.y, self.width, self.height))
@@ -70,7 +70,7 @@ class EnemySkeleton:
     def main(self, display):
         if self.animation_count + 1 == 16:
             self.animation_count = 0
-        
+
         self.animation_count += 1
 
         if self.reset_offset  == 0:
@@ -79,17 +79,17 @@ class EnemySkeleton:
             self.reset_offset = random.randrange(120, 150)
         else:
             self.reset_offset -= 1
-        
+
         if player.x + self.offset_x > self.x-display_scroll[0]:
             self.x += 1
         elif player.x + self.offset_x < self.x-display_scroll[0]:
             self.x -= 1
-        
+
         if player.y + self.offset_y > self.y-display_scroll[1]:
             self.y += 1
         elif player.y + self.offset_y < self.y-display_scroll[1]:
             self.y -= 1
-        
+
         display.blit(pygame.transform.scale(
             self.animation_images[self.animation_count//4], (64, 64)), (self.x-display_scroll[0], self.y-display_scroll[1]))
 
@@ -97,7 +97,7 @@ class EnemySkeleton:
 enemies = [EnemySkeleton(10, 10)]
 
 display_scroll = [0,0]
-
+# Test push
 while True:
     #display.fill((77, 128, 77))
     display.fill((115, 154, 119))  # grass coloured background
@@ -106,7 +106,7 @@ while True:
         if event.type == pygame.QUIT:
             sys.exit()
             pygame.quit()
-    
+
     keys = pygame.key.get_pressed()
 
     # start location objects
