@@ -18,9 +18,12 @@ GREEN = (111, 115, 100)
 
 # sound mixer
 mixer.init()
-mixer.music.load('demos/background_rain_thunder_128kbps_32000hz.ogg')
+#mixer.music.load('demos/background_rain_thunder_128kbps_32000hz.ogg')
 #mixer.music.load('demos/background_ominous_boom_128kbps_32000hz.ogg')
-mixer.music.play(loops = -1)
+#mixer.music.play(loops = -1)
+
+pygame.mixer.Channel(0).play(pygame.mixer.Sound('demos/background_rain_thunder_128kbps_32000hz.ogg'), loops = -1)
+pygame.mixer.Channel(1).play(pygame.mixer.Sound('demos/background_ominous_boom_128kbps_32000hz.ogg'), loops = -1)
 
 # main game loop
 while True:
