@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 
 # file extensions
-*.ogg
+#*.ogg
 
 # specific files
 demos/Adrian von Ziegler - Moonsong.ogg
