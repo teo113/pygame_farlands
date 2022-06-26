@@ -3,6 +3,7 @@ Farlands is an 8x8 style top-down RPG game, written purely in Python.
 
 ## authors
 - Theodore Faull
+- Robin Morris
 
 ## game story
 Your character has reached the end of the known world, the Farlands, to explore and adventure through the landscape. What is beyond the safety of the village? What is the mysterious source of power in the wastelands? Who or what is threatening the villagers?
@@ -26,8 +27,12 @@ Your character will start in the village of Hearthwood. Here he can meet locals 
 - background music
 - health bar
 - money (gold coins)
+- inventory system
 
 ## acknowledgments
-- pygame tutorials https://www.youtube.com/c/ScriptLineStudios
-- ruins asset https://www.instagram.com/franek_pixelart/
-- character sprite ideas https://www.pinterest.co.uk/pin/854558098015054690/?mt=login
+- pygame general tutorials https://www.youtube.com/c/ScriptLineStudios
+- pygame general tutorials https://www.youtube.com/c/ShawCode
+- pygame sound tutorial https://www.askpython.com/python-modules/pygame-adding-background-music
+- ruins and tree asset inspiration https://www.instagram.com/franek_pixelart/
+- character sprite inspiration https://www.pinterest.co.uk/pin/854558098015054690/?mt=login
+- rain sound effects https://www.youtube.com/watch?v=2r560oepUoA
