@@ -36,3 +36,4 @@ Your character will start in the village of Hearthwood. Here he can meet locals 
 - ruins and tree asset inspiration https://www.instagram.com/franek_pixelart/
 - character sprite inspiration https://www.pinterest.co.uk/pin/854558098015054690/?mt=login
 - rain sound effects https://www.youtube.com/watch?v=2r560oepUoA
+- ominous boom sound effect https://www.youtube.com/watch?v=XGfdicc8ojg
