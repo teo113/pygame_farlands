@@ -16,10 +16,12 @@ Your character will start in the village of Hearthwood. Here he can meet locals 
 - NPCs (villagers, wizards, adventurers, alchemists & more...)
 - enemies (skeletons, spiders, witches, ghosts, bandits & more...)
 - NPC dialogue
-- combat
+- combat (melee)
+- combat (projectile)
 - object and chracter collisions
 - farming
 - day & night cycle
+- indoor / outdoor transition and scenes
 - weather cycle (clear, rain, storm)
 - AI (NPC & enemy actions/responses)
 - character naming
