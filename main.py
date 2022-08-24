@@ -22,6 +22,9 @@ horse_feeding_images = [
     pygame.image.load("assets/horse1_saddled_feeding2_x1.png")
 ]
 
+# audio
+pygame.mixer.Channel(0).play(pygame.mixer.Sound('demos/Adrian von Ziegler - Moonsong.ogg'), loops = -1)
+
 # player class
 class Player:
     def __init__(self, x, y, width, height):
@@ -111,8 +114,13 @@ while True:
 
     # start location objects
     #pygame.draw.rect(display, (255,255,255), (100-display_scroll[0], 100-display_scroll[1], 16, 16))
+    display.blit(pygame.transform.scale(pygame.image.load("assets/hanging_cage_1_x1.png"),(128, 128)), (-100-display_scroll[0], 450-display_scroll[1], 16, 16))
+    display.blit(pygame.transform.scale(pygame.image.load("assets/hanging_cage_2_x1.png"),(128, 128)), (200-display_scroll[0], 700-display_scroll[1], 16, 16))
+    display.blit(pygame.transform.scale(pygame.image.load("assets/building_01_x1.png"),(192, 192)), (-100-display_scroll[0], -100-display_scroll[1], 16, 16))
+    display.blit(pygame.transform.scale(pygame.image.load("assets/tavern_1_x1.png"),(320, 320)), (-500-display_scroll[0], -150-display_scroll[1], 16, 16))
     display.blit(pygame.transform.scale(pygame.image.load("assets/tree1_x1.png"),(192, 192)), (100-display_scroll[0], 100-display_scroll[1], 16, 16))
-    display.blit(pygame.transform.scale(pygame.image.load("assets/ruins_x1.png"),(192, 192)), (500-display_scroll[0], 350-display_scroll[1], 16, 16))
+    display.blit(pygame.transform.scale(pygame.image.load("assets/tree2_x1.png"),(192, 192)), (400-display_scroll[0], -50-display_scroll[1], 16, 16))
+    display.blit(pygame.transform.scale(pygame.image.load("assets/ruins_x1.png"),(384, 384)), (600-display_scroll[0], 150-display_scroll[1], 16, 16))
     display.blit(pygame.transform.scale(pygame.image.load("assets/bush1_x1.png"),(128, 128)), (425-display_scroll[0], 475-display_scroll[1], 16, 16))
     display.blit(pygame.transform.scale(pygame.image.load("assets/horse1_saddled_feeding0_x1.png"),(192, 136)), (650-display_scroll[0], 550-display_scroll[1], 24, 17))
 
